@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;  
+}
+.main{
+    
+    background: linear-gradient(270deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)), url(/images/anthony-tyrrell-Bl-LiSJOnlY-unsplash\ \(1\).jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.inner{
+    
+    background-color : rgba(46, 16, 5, .3);
+    border-radius: 12px;
+    box-shadow: inset 6px 6px 6px #ecd592, inset -6px -6px 6px #cdbaa1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: -webkit-max-content;
+    height: max-content;
+    min-height: 480px;
+    padding: 40px 10px 10px;
+    transition: .3s ease-in-out;
+    width: 375px;
+    color: #ecd592;
+}
+.inner h1, .inner h2{
+    color: white;
+}
+.inner input{
+    height: 30%;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.677);
+    border: none;
+    /* box-shadow: inset 2px 2px 2px #ecd592, inset -6px -6px 6px #cdbaa1; */
+}
+.inner ::placeholder{
+    color: #ecd592;
+}
+.inner button{
+    background-color: #ecd592;
+    height: 20%;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    
+}
+.parent{
+    width: 100%;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side{
+    height: 100%;
+    width: 20%;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-size: x-large;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 10s linear;
-  }
+.children a{
+     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.btn{
+    height: 30%;
+    width: 70%;
+    border: none;
+    border-radius: 10px;
+    /* color: white; */
+    background-color: white;
 
-.App-link {
-  color: #61dafb;
 }
+.profile{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: blue;
+    color: #ecd592;
+    font-size: larger;
+    font-weight: bolder;
+   
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
+}
+.profile img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.home main{
+    width: 80%;
+    height: 100%;
+    background-color: red;
 }

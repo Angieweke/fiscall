@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+
+import Login from "./pages/Login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Expenses from "./pages/Expenses";
+import Profile from "./pages/Profile";
+import Income from "./pages/Income";
+import { useState } from "react";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
+  const [profileURL, setProfileURL] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route element={<ProtectedRoute />}>
+            <Route
+              path="/"
+              element={
+                <Home profileURL={profileURL} setProfileURL={setProfileURL} />
+              }
+            >
+              <Route index element={<Dashboard />} />
+              <Route path="expenses" element={<Expenses />} />
+              <Route path="income" element={<Income />} />
+              <Route
+                path="profile"
+                element={
+                  <Profile
+                    profileURL={profileURL}
+                    setProfileURL={setProfileURL}
+                  />
+                }
+              />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
