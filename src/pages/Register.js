@@ -40,6 +40,7 @@ createUserWithEmailAndPassword(auth, email, password, name)
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    console.log(error)
     // ..
   });
     }
